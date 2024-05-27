@@ -19,6 +19,21 @@ class Shape
     int8_t height_;
 };
 
+class PaintCost
+{
+    public:
+     auto get_cost(double area) -> double
+     {
+          return area * 70;
+     }
+};
+
+
+std::cout << "Enter width: " << std::endl;
+std::cin >> width_;
+std::cout << "Enter hight: " << std::endl;
+std::cin >> height_;
+
 // Derived class
 class Rectangle : public Shape
 {
@@ -39,13 +54,14 @@ class Triangle : public Shape
     }
 };
 
+
 auto main() -> int
 {
     {
         Rectangle rect;
 
-        rect.set_width(5);
-        rect.set_height(7);
+        rect.set_width(width_);
+        rect.set_height(height_);
 
         // Print the area of the object.
         std::cout << "Total area: " << rect.get_area() << std::endl;
